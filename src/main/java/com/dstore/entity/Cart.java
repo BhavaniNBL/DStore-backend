@@ -1,6 +1,7 @@
 package com.dstore.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
@@ -8,16 +9,18 @@ import java.util.List;
 
 @Entity
 @Table(name = "cart")
+@Data
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private int id;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItem> cartItems;
-
+    @Column(name = "price")
     private double totalPrice;
 
-    // Getters and setters
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private CartItem cartItem;
 }
 
