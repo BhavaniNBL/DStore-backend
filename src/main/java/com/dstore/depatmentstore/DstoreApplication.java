@@ -1,13 +1,13 @@
-package com.dstore.dstorebackend;
+package com.dstore.depatmentstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DstoreBackendApplication {
+public class DstoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DstoreBackendApplication.class, args);
+		SpringApplication.run(DstoreApplication.class, args);
 	}
 
 }
